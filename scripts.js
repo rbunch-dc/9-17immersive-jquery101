@@ -90,6 +90,42 @@ $(document).ready(function(){
 		}else if(whatToDo == 'toggleClass'){
 			// if we don't pass anything to html() it will return current innerHTML.
 			$('#thing').toggleClass('btn-danger');
+		}else if(whatToDo == 'prepend'){
+			// prepend is innerHTML = ... + .innerHTML
+			// var header = document.getElementById('header');
+			// header.innerHTML = "New STuff " + header.innerHTML
+			$('#thing').prepend('THis is some prepended text.');
+		}else if(whatToDo == 'append'){
+			// prepend is teh same as innerHTML += ...
+			// var header = document.getElementById('header');
+			// header.innerHTML += "New STuff"
+			$('#thing').append('THis is some appended text.');
+		}else if(whatToDo == 'toggleFade'){
+			$('#thing').fadeToggle(1500);
+		}else if(whatToDo == 'slideToggle'){
+			$('#thing').slideToggle(1500);
+		}else if(whatToDo == 'animate'){
+			// Animate takes 2 args:
+			// 1. an object of css properties to animate too
+			// 2. how long you want it to animate over (in mili)
+			$('#thing').animate({
+				'width': "40%",
+				'opacity': .3,
+				'font-size': "100px",
+				'border-width': "10px"
+			},1500)
+		}else if(whatToDo == 'goodbye'){
+			$('#thing').animate({
+				'margin-left': "-3000px",
+			},1500)
+		}else if(whatToDo == 'hello'){
+			$('#thing').animate({
+				'margin-left': "0px",
+			},1500)
+		}else if(whatToDo == 'loop'){
+			$('button').each(function(){
+				console.log(this)
+			})
 		}
 	});
 	// $('div').click(function(){
